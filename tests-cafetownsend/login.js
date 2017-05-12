@@ -1,8 +1,5 @@
 var login = function()
 {
-    userName: element(by.model('user.name'));
-    password: element(by.model('user.password'));
-    submit: element(by.className('main-button'));
     this.goToUrl = function() {
         browser.get('http://cafetownsend-angular-rails.herokuapp.com/login');
     };
