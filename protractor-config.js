@@ -1,4 +1,4 @@
-let SpeReporter  = require('./node_modules/jasmine-spec-reporter').SpecReporter;
+let SpecReporter  = require('./node_modules/jasmine-spec-reporter').SpecReporter;
 
 exports.config = {
     seleniumAddress: 'http://localhost:4444/wd/hub',
