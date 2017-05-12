@@ -10,5 +10,9 @@ var employee = function(){
     this.deleteEmployee = function() {
         element(by.id('bDelete')).click();
     };
+
+    this.selectRandomEmployee = function() {
+        element(by.id('bAdd')).click();
+    };
 };
 module.exports = employee;
