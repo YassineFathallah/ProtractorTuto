@@ -11,4 +11,7 @@ describe('when i enter valid username & password', function(){
         login.clickOnLogin();
         expect(element(by.id('greetings')).getText()).toBe('Hello Luke');
     });
+    it('when i click on add', function(){
+
+    });
 });
