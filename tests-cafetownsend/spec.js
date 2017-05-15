@@ -7,8 +7,8 @@ var employee = new employee();
 var employeeAdd = new employeeAdd();
 var employeeEdit = new employeeEdit();
 
-describe('when i enter valid username & password', function(){
-    it('should log in successfully', function(){
+describe('testSuite01', function(){
+    it('login success test', function(){
         login.goToUrl();
         login.isAtLoginPage();
 
@@ -18,7 +18,7 @@ describe('when i enter valid username & password', function(){
         expect(element(by.id('greetings')).getText()).toBe('Hello Luke');
     });
 
-    it('when i click on add', function(){
+    it('add employee test', function(){
         employee.createEmployee();
         employeeAdd.setFirstName();
         employeeAdd.setLastName();
@@ -28,7 +28,7 @@ describe('when i enter valid username & password', function(){
         expect(element(by.id('greetings')).getText()).toBe('Hello Luke');
     });
 
-    it('when i select a user and click on Edit it should update LastName', function(){
+    it('update LastName test', function(){
         var lastName = "name 1";
 
         employee.selectEmployee();
@@ -37,5 +37,17 @@ describe('when i enter valid username & password', function(){
         employeeEdit.setLastName(lastName);
         employeeEdit.clickOnUpdate();
         expect(element(by.id('greetings')).getText()).toBe('Hello Luke');
+    });
+
+    it('delete employee test', function(){
+        var countBefore = employee.numberOfEmployee();
+
+        employee.selectEmployee();
+        employee.deleteEmployee();
+
+        var countAfter = employee.numberOfEmployee();
+        
+        expect(countBefore).toBeGreaterThan(countAfter);
+
     });
 });
